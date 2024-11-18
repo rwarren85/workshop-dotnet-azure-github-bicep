@@ -12,7 +12,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
         logger.LogInformation("Get WeatherForecast called");
         var summaries = new[]
         {
-            "Freezing" //, "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
         var forecasts =  Enumerable.Range(1, 5).Select(index =>
                 new WeatherForecast
@@ -25,8 +25,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
         return forecasts;
     }
 
- 
-    [HttpGet("slow")]
+     [HttpGet("slow")]
     public async Task<IEnumerable<WeatherForecast>> GetSlow()
     {
         var randomWaitInMs = Random.Shared.Next(500, 5000);
@@ -35,7 +34,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
         logger.LogInformation("Get Slow WeatherForecast called with wait of {wait}", randomWaitInMs);
         var summaries = new[]
         {
-            "Freezing" //, "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
         var forecasts =  Enumerable.Range(1, 5).Select(index =>
                 new WeatherForecast
